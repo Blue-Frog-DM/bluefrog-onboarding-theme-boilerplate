@@ -12,6 +12,6 @@ jobs:
         uses: HubSpot/hubspot-cms-deploy-action@v1.5
         with:
           src_dir: src
-          dest_dir: bf-enterprise
+          dest_dir: onboarding-theme
           portal_id: ${{ secrets.HUBSPOT_PORTAL_ID }}
           personal_access_key: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
