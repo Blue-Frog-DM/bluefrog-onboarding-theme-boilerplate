@@ -8,6 +8,7 @@
         "label": "Primary",
         "name": "primary",
         "type": "color",
+        "alternate_names": ["primary_color"],
         "visibility": {
           "hidden_subfields": {
             "opacity": true
@@ -26,6 +27,7 @@
         "label": "Secondary",
         "name": "secondary",
         "type": "color",
+        "alternate_names": ["secondary_color"],
         "visibility": {
           "hidden_subfields": {
             "opacity": true
@@ -51,6 +53,7 @@
         "label": "Primary",
         "name": "primary",
         "type": "font",
+        "alternate_names": ["body_font"],
         "visibility": {
           "hidden_subfields": {
             "size": true,
@@ -72,6 +75,7 @@
         "label": "Secondary",
         "name": "secondary",
         "type": "font",
+        "alternate_names": ["heading_font"],
         "visibility": {
           "hidden_subfields": {
             "size": true,
@@ -297,6 +301,7 @@
             "type": "font",
             "inherited_value": {
               "property_value_paths": {
+                "color": "theme.global_fonts.secondary.color",
                 "fallback": "theme.global_fonts.secondary.fallback",
                 "font": "theme.global_fonts.secondary.font",
                 "font_set": "theme.global_fonts.secondary.font_set"
