@@ -1,4 +1,7 @@
 /* Header DND sections */
+.header {
+  padding: 20px 0;
+}
 
 .header .dnd-section {
   padding: 0;

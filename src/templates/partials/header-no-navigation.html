@@ -4,37 +4,21 @@
 -->
 <header class="header header--no-navigation">
 
-  {# Top header drag and drop area #}
-
-  {% dnd_area "header-top"
-    label="Top header",
-    class="content-wrapper"
-  %}
-  {% end_dnd_area %}
-
   {# Main header #}
 
   <div class="header__container content-wrapper">
 
-    {# Logo #}
+    {% dnd_area 'dnd_area' class='body-container body-container--landing-page', label='Main section' %}
+      {% dnd_section %}
+        
+      {# Logo #}
+        {% dnd_module "module_16974694489789" path="/logo", label="Logo" %}
+        {% end_dnd_module %}
+      {# End Logo #}
 
-    <div class="header__logo">
-      {% module "site_logo"
-        path="@hubspot/logo"
-        img={
-          "loading": "eager"
-        }
-      %}
-    </div>
+      {% end_dnd_section %}
+    {% end_dnd_area %}
 
   </div>
-
-  {# Bottom header drag and drop area #}
-
-  {% dnd_area "header-bottom"
-    label="Bottom header",
-    class="content-wrapper"
-  %}
-  {% end_dnd_area %}
 
 </header>

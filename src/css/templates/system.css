@@ -30,7 +30,7 @@
 .systems-page {
   margin: 0 auto;
   max-width: 700px;
-  padding: 3rem 1.4rem;
+  padding: 40px 0 60px;
 }
 
 .systems-page--search-results {
@@ -45,22 +45,12 @@
 
 .systems-page .success {
   background-color: #CDE3CC;
-  border: 1.5px solid #4F7D24;
-  border-radius: 6px;
+  border-left: 4px solid #4F7D24;
   color: #4F7D24;
   display: inline-block;
-  margin: 1.4rem 0;
-  padding: 0.1rem 0.7rem;
+  margin: 1.6rem 0;
+  padding: 20px 14px;
   width: 100%;
-}
-
-.systems-page form input {
-  max-width: 100%;
-}
-
-.systems-page form input[type='submit'] {
-  margin: 0.7rem 0;
-  display: block;
 }
 
 /* Search pages */
@@ -110,6 +100,26 @@
 }
 
 /* Subscription preferences */
+{% if theme.system_pages.checkbox_type == 'circle' %}
+{% set pref_border_radius = '50%' %}
+{% elif theme.system_pages.checkbox_type == 'rounded' %}
+{% set pref_border_radius = '6px' %}
+{% else %}
+{% set pref_border_radius = '0' %}
+{% endif %}
+
+{% if theme.system_pages.checkbox_size == 'small' %}
+{% set pref_size = '18px' %}
+{% set pref_margin = '32px' %}
+{% elif theme.system_pages.checkbox_size == 'large' %}
+{% set pref_size = '28px' %}
+{% set pref_margin = '42px' %}
+{% else %}
+{% set pref_size = '24px' %}
+{% set pref_margin = '38px' %}
+{% endif %}
+
+{% set pref_color = theme.system_pages.checkbox_color.css %}
 
 #email-prefs-form .item.disabled {
   opacity: 0.6;
@@ -118,6 +128,75 @@
 
 #email-prefs-form .item.disabled input:disabled {
   cursor: not-allowed;
+}
+.systems-page .email-prefs #hs-localization-select {
+	background-color: #f1f1f1;
+	margin-bottom: 28px;
+}
+
+.systems-page .checkbox-row .fakelabel {
+	display: flex;
+	align-items: center;
+}
+
+.systems-page .checkbox-row .fakelabel input[type="checkbox"] {
+	position: relative;
+	display: block;
+	-webkit-appearance: none;
+	appearance: none;
+	margin: 2px 0 0;
+	width: {{ pref_size }};
+	height: {{ pref_size }};
+	background-color: transparent;
+	border: 2px solid {{ pref_color }};
+	border-radius: {{ pref_border_radius }};
+	margin-right: 14px;
+	-webkit-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+.systems-page .checkbox-row .fakelabel input[type="checkbox"]:checked {
+	background-color: {{ pref_color }};
+}
+
+.systems-page .checkbox-row .fakelabel input[type="checkbox"]:before {
+	content: "\f00c";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	font-size: 12px;
+	color: #000;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-40%);
+	opacity: 0;
+	visibility: hidden;
+	transition: all ease-in-out .3s;
+}
+
+.systems-page .checkbox-row .fakelabel input[type="checkbox"]:checked:before {
+	opacity: 1;
+	visibility: visible;
+	color: #fff;
+}
+
+.systems-page .checkbox-row .fakelabel span {
+	font-size: 1.125rem;
+	font-weight: 700;
+}
+
+.systems-page .item-inner > p {
+	font-weight: 300;
+	margin-left: {{ pref_margin }};
+}
+
+.systems-page form input {
+  max-width: 100%;
+}
+
+.systems-page form input[type='submit'] {
+  margin: 0.7rem 0;
+  display: block;
 }
 
 /* Membership pages */
