@@ -1,4 +1,4 @@
-# hubspot-theme-boilerplate
+# onboarding-theme-boilerplate
 Boilerplate theme, template, and modules for Blue Frog's Hubspot theme
 
 ## Deploy Theme to a HubSpot Account:
