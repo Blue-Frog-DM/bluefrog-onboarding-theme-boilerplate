@@ -1,6 +1,11 @@
 .content-wrapper {
+  width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
+}
+
+.content-wrapper > .container-fluid {
+	width: 100%;
 }
 
 @media screen and (min-width: 1380px) {
