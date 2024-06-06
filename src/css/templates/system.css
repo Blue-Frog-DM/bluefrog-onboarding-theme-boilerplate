@@ -215,3 +215,12 @@
 .form-input-validation-message ul.hs-error-msgs li {
   margin: 0;
 }
+
+/* Center Logo */
+
+span.hs_cos_wrapper_type_logo {
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
