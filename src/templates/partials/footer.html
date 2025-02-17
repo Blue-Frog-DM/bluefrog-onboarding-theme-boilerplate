@@ -25,7 +25,7 @@
 
 					{% dnd_module
 						 path="@hubspot/rich_text",
-						 html='<div class="footer-copyright" style="text-align: right;"><span>© {{ year }} {{ company_name }} All rights reserved.</span></div>',
+						 html='<div class="footer-copyright" style="text-align: right;"><span>© {{ year }} {% if business_unit().name %} <span class="company-name">{{ business_unit().name }}</span>{% elif site_settings.company_name %} <span class="company-name">{{ site_settings.company_name }}</span>{% endif %} All rights reserved.</span></div>',
 						 offset=4,
 						 width=8
 					%}
